@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="OfficeHub.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OfficeHub"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Spacing="5">
+            <TextBlock FontSize="35" Text="Office Hub"/>
+            <TextBlock Text="这是一个用WinUI重写的Office Hub"/>
+            <Image Source="/Assets/Square310x310Logo.png" Width="100" Height="100" HorizontalAlignment="Left"/>
+            <TextBlock FontSize="35" Text="为什么要重写一个？"/>
+            <TextBlock Text="先说旧版Office，已经不受支持了，被微软删掉了页面，完全无法使用，成了具空壳"/>
+            <Image Source="/Assets/OfficeWindow.png" Width="500" HorizontalAlignment="Left"/>
+            <TextBlock Text="再说新版Office，现在已经改名叫Copilot了，因为微软魔了，在Windows11到处塞入了AI，都不惜把用了30多年的名字改了，并且新版的Copilot更差，不仅网页套壳，而且AI功能还无法使用，做了这个Office Hub，恢复了原版Office Hub的功能"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

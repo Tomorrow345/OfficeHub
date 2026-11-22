@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="OfficeHub.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:OfficeHub"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--
+        This is the main content area of your application.
+        Add your UI elements here — for example, controls, layouts, and data-bound views.
+        Use 'dotnet new winui-page' to create additional pages and navigate to them via
+        the Frame in MainWindow (RootFrame).
+    -->
+    <Grid>
+        <NavigationView PaneDisplayMode="Auto" IsBackButtonVisible="Collapsed" IsSettingsVisible="False" OpenPaneLength="220" CompactModeThresholdWidth="600" ExpandedModeThresholdWidth="800" ItemInvoked="MainNavView_MenuItemInvoked">
+            <NavigationView.MenuItems>
+
+                <NavigationViewItem Content="首页" Tag="Home" ToolTipService.ToolTip="首页">
+                    <NavigationViewItem.Icon>
+                        <SymbolIcon Symbol="Home"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem Tag="Word" ToolTipService.ToolTip="Word">
+                    <NavigationViewItem.Content>
+                        <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+                            <Image Source="/Assets/NavItemIcons/word-icon.png" Width="20" Height="20"/>
+                            <TextBlock Text="Word" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </NavigationViewItem.Content>
+                </NavigationViewItem>
+
+                <NavigationViewItem Tag="Excel" ToolTipService.ToolTip="Excel">
+                    <NavigationViewItem.Content>
+                        <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+                            <Image Source="/Assets/NavItemIcons/excel-icon.png" Width="20" Height="20"/>
+                            <TextBlock Text="Excel" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </NavigationViewItem.Content>
+                </NavigationViewItem>
+
+                <NavigationViewItem Tag="PowerPoint"  ToolTipService.ToolTip="PowerPoint">
+                    <NavigationViewItem.Content>
+                        <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+                            <Image Source="/Assets/NavItemIcons/ppt-icon.png" Width="20" Height="20"/>
+                            <TextBlock Text="PowerPoint" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </NavigationViewItem.Content>
+                </NavigationViewItem>
+
+                <NavigationViewItem Tag="Outlook" ToolTipService.ToolTip="Outlook">
+                    <NavigationViewItem.Content>
+                        <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+                            <Image Source="/Assets/NavItemIcons/outlook-icon.png" Width="20" Height="20"/>
+                            <TextBlock Text="Outlook" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </NavigationViewItem.Content>
+                </NavigationViewItem>
+
+            </NavigationView.MenuItems>
+
+            <NavigationView.FooterMenuItems>
+
+                <NavigationViewItem Content="关于" Tag="About" ToolTipService.ToolTip="关于">
+                    <NavigationViewItem.Icon>
+                        <SymbolIcon Symbol="Message"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem x:Name="OfficeHubVerT" Content="版本信息" Tag="OfficeHubVerT" ToolTipService.ToolTip="版本信息">
+                    <NavigationViewItem.Icon>
+                        <SymbolIcon Symbol="Flag"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem x:Name="UserNavItem" Tag="User" ToolTipService.ToolTip="用户">
+                    <StackPanel Orientation="Horizontal">
+                        <PersonPicture x:Name="UserAvatar" Width="20" Height="20"/>
+                        <TextBlock x:Name="UserNameText" Text="用户"/>
+                    </StackPanel>
+                </NavigationViewItem>
+
+            </NavigationView.FooterMenuItems>
+
+            <NavigationView.Content>
+                <Grid>
+                    <TeachingTip x:Name="UserTeachingTip" Title="用户" PreferredPlacement="Bottom" Subtitle="用户" Target="{x:Bind UserNavItem}">
+                        <TeachingTip.HeroContent>
+                            <PersonPicture x:Name="UserAvatar2" Width="100" Height="100"/>
+                        </TeachingTip.HeroContent>
+                        <TeachingTip.Content>
+                            <TextBlock Margin="0,16,0,0" Text="用户" TextWrapping="WrapWholeWords" />
+                        </TeachingTip.Content>
+                    </TeachingTip>
+
+                    <Frame x:Name="ContentFrame" Margin="20">
+
+                    </Frame>
+                </Grid>
+            </NavigationView.Content>
+
+        </NavigationView>
+    </Grid>
+</Page>

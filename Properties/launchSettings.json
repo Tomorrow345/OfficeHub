@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "OfficeHub (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "OfficeHub (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
